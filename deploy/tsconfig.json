@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/pages/(root)/categories/[categoryId]/index.jsx", "src/pages/(root)/checkout/index.jsx", "src/pages/(root)/search/[query]/index.jsx", "src/pages/(root)/checkout/index.jsx", "src/components/Navbar.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
