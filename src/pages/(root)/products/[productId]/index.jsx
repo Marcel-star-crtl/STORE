@@ -78,7 +78,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/product/${productId}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${productId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch product details');
         }
@@ -91,7 +91,7 @@ const ProductDetails = () => {
 
     const fetchRelatedProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/product/related/${productId}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/related/${productId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch related products');
         }
@@ -100,7 +100,7 @@ const ProductDetails = () => {
     
         // Fetch category titles for related products
         const categoryPromises = relatedProductsData.map(product => 
-          fetch(`http://localhost:5000/api/category/${product.category}`).then(res => res.json())
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/${product.category}`).then(res => res.json())
         );
         const categories = await Promise.all(categoryPromises);
         
@@ -140,7 +140,7 @@ const ProductDetails = () => {
         comment: comment.trim()
       });
   
-      const response = await fetch(`http://localhost:5000/api/product/rating`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/rating`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ const ProductDetails = () => {
       toast.success("Rating submitted successfully");
       
       // Refresh product details to show the new rating
-      const updatedProductResponse = await fetch(`http://localhost:5000/api/product/${productId}`);
+      const updatedProductResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${productId}`);
       const updatedProductData = await updatedProductResponse.json();
       setProductDetails(updatedProductData);
       

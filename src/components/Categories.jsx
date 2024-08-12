@@ -176,7 +176,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/category/');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/`);
         if (!response.ok) {
           throw new Error('Failed to fetch categories');
         }

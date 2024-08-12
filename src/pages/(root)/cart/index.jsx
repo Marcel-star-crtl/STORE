@@ -116,7 +116,7 @@ const Cart = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:w-3/4">
-        <div className="flex flex-col lg:flex-row gap-8 py-16">
+        <div className="flex flex-col lg:flex-row gap-8 py-8 md:py-16">
           <div className="w-full lg:w-2/3 flex items-center min-h-screen">
             <div className="w-full">
               {cartItems.length === 0 ? (
@@ -126,7 +126,7 @@ const Cart = () => {
                   {cartItems.map((cartItem) => (
                     <div
                       key={cartItem.item._id}
-                      className="flex flex-col sm:flex-row sm:gap-3 hover:bg-grey-1 px-4 py-3 sm:items-start justify-between"
+                      className="flex flex-col sm:flex-row sm:gap-3 hover:bg-grey-1 lg:px-4 py-3 sm:items-start justify-between"
                     >
                       <div className="flex">
                         <Image
@@ -181,7 +181,7 @@ const Cart = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/3 flex flex-col bg-grey-1 justify-center min-h-screen lg:ml-20">
+          <div className="w-full lg:w-1/3 flex flex-col bg-grey-1 justify-center min-h-0 lg:min-h-screen lg:ml-20">
             <div className="w-full">
               <div className="relative w-full h-64 lg:h-96">
                 <Image
@@ -209,6 +209,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -216,6 +217,11 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+
+
+
 
 
 

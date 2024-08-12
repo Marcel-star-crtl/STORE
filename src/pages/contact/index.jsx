@@ -237,7 +237,7 @@ const ContactPage = () => {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/enquiry', values);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/enquiry`, values);
       resetForm();
       toast.success('Submitted successfully!');
     } catch (error) {

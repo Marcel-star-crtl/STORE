@@ -292,7 +292,7 @@ const ProductInfo = ({ productInfo }) => {
   useEffect(() => {
     const fetchCategoryTitle = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/category/${productInfo.category}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/${productInfo.category}`);
         if (!response.ok) {
           throw new Error('Failed to fetch category');
         }

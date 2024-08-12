@@ -389,11 +389,11 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseBestSellers = await fetch('http://localhost:5000/api/product?tags=best-sellers');
+        const responseBestSellers = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?tags=best-sellers`);
         const bestSellersData = await responseBestSellers.json();
         setBestSellers(bestSellersData);
 
-        const responseNewArrivals = await fetch('http://localhost:5000/api/product?tags=new-arrivals');
+        const responseNewArrivals = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?tags=new-arrivals`);
         const newArrivalsData = await responseNewArrivals.json();
         setNewArrivals(newArrivalsData);
       } catch (error) {

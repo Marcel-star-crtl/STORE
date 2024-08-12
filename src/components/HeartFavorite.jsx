@@ -123,7 +123,7 @@ const HeartFavorite = ({ product, updateWishlist }) => {
           return;
         }
 
-        const res = await fetch('http://localhost:5000/api/user', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -159,7 +159,7 @@ const HeartFavorite = ({ product, updateWishlist }) => {
     try {
       setLoading(true);
       const method = isLiked ? 'DELETE' : 'POST';
-      const res = await fetch('http://localhost:5000/api/user/wishlist', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/wishlist`, {
         method: method,
         headers: {
           Authorization: `Bearer ${token}`,

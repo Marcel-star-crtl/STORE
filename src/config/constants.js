@@ -1,4 +1,4 @@
-export const BACKEND_URL = 'http://localhost:5000'
+export const BACKEND_URL = 'https://ecomme-pi.vercel.app'
 
 export const API_URL = `${BACKEND_URL}/api`
 

@@ -81,7 +81,7 @@ const BestSellers = () => {
         setIsLoading(true);
         
         // Fetch best sellers
-        const response = await fetch('http://localhost:5000/api/product?tags=best-sellers');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?tags=best-sellers`);
         if (!response.ok) {
           throw new Error('Failed to fetch best sellers');
         }

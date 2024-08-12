@@ -19,7 +19,7 @@ const Wishlist = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:5000/api/user/wishlist", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/wishlist`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -36,7 +36,7 @@ const Wishlist = () => {
         // Fetch category details for each product
         const wishlistWithCategories = await Promise.all(data.wishlist.map(async (product) => {
           if (product.category) {
-            const categoryRes = await fetch(`http://localhost:5000/api/category/${product.category}`);
+            const categoryRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/${product.category}`);
             if (categoryRes.ok) {
               const categoryData = await categoryRes.json();
               return { ...product, categoryTitle: categoryData.title };
@@ -62,7 +62,7 @@ const Wishlist = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/user/wishlist', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/wishlist`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -94,7 +94,7 @@ const Wishlist = () => {
       </div>
       {wishlist.length === 0 && <p>No items in your wishlist</p>}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {wishlist.map((product) => (
           <div key={product._id} className="w-full flex flex-col gap-2 cursor-pointer">
             <Link href={`/(root)/products/${product._id}`}>

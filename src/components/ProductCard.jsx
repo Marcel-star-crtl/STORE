@@ -24,7 +24,7 @@ const ProductCard = ({ product, updateWishlist, categoryTitle }) => {
         <div className="flex flex-col gap-1">
           <p className="text-lg font-semibold">{product.title}</p>
           <p className="text-sm text-gray-500" style={{fontFamily: "Poppins-Regular"}}>
-            {categoryTitle || product.title || 'Unknown Category'}
+            {categoryTitle || 'Unknown Category'}
           </p>
           <p className="text-base font-medium" style={{fontFamily: "Poppins-Regular", fontSize: "14px"}}>$ {product.price.toFixed(0)}</p>
         </div>
