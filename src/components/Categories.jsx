@@ -209,7 +209,7 @@ const Categories = () => {
                       layout="responsive"
                       className="w-full"
                     />
-                    <p className="text-left" style={{ fontSize: "32px", fontWeight: "700" }}>{category.title}</p>
+                    <p className="text-left" style={{ fontSize: "28px", fontWeight: "700" }}>{category.title}</p>
                   </div>
                 </Link>
               ))}

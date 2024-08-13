@@ -30,7 +30,7 @@ const Story = () => {
         <FullImage imageUrl={Employee} alt="employee" />
 
         {/* Our Story */}
-        <div className="flex justify-center items-center px-4 sm:px-6 md:px-8 py-12 md:py-20">
+        <div className="flex justify-center items-center px-4 sm:px-6 md:px-8 py-12 md:pt-20 md:pb-16">
           <div className="w-full max-w-4xl text-black">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">Our Story</h1>
             <div className="space-y-4 font-poppins text-sm md:text-base leading-relaxed" style={{fontFamily: "Poppins-Regular"}}>
@@ -87,13 +87,13 @@ const Story = () => {
         </div>
 
         {/* CONNECT */}
-        <div className="flex flex-col md:flex-row min-h-[24rem] md:h-96 px-4 sm:px-16">
+        <div className="flex flex-col md:flex-row max-h-[400px] px-4 sm:px-16 py-4">
           <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 border border-black">
-            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight md:leading-snug lg:leading-tight text-center md:text-left">
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight md:leading-snug lg:leading-tight text-center md:text-left">
               Carefully <br/> Considered
             </h1>
           </div>
-          <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+          <div className="w-full md:w-1/2 max-h-[400px] h-[254px] relative">
             <Image
               src="/detailsImg.png"
               alt="Carefully Considered"

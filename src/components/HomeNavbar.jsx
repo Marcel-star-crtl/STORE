@@ -522,14 +522,14 @@ const HomeNavbar = () => {
           </li>
         ))}
       </ul>
-      <div className="logo-wrapper flex-shrink-0">
+      <div className="flex-shrink-0">
         <Link href="/">
           <Image
             src="/logoanne.png"
             alt="Annie's"
             width={100}
             height={40}
-            className="w-24 md:w-32"
+            className="w-24 md:w-32 logo-filter"
             priority
           />
         </Link>

@@ -448,7 +448,7 @@ const ProductList = () => {
     <div className="flex flex-col items-center gap-10 py-8 px-4 sm:px-6 md:px-8 lg:px-16">
       <div className="new-arrivals w-full mt-8">
         <div className="flex justify-between items-center mb-4">
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">New Arrivals</p>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold md:mb-2 lg:mb-2">New Arrivals</p>
           <button className="text-sm text-gray-600 hover:text-gray-800" onClick={handleSeeNewArrivals}>See More</button>
         </div>
         {!newArrivals.length ? (
@@ -472,7 +472,7 @@ const ProductList = () => {
       </div>
       <div className="best-sellers w-full mt-2">
         <div className="flex justify-between items-center mb-4">
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Best Sellers</p>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold md:mb-2 lg:mb-2">Best Sellers</p>
           <button className="text-sm text-gray-600 hover:text-gray-800" onClick={handleSeeBestSellers}>See More</button>
         </div>
         {!bestSellers.length ? (
