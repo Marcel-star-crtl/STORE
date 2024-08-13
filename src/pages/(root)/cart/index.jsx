@@ -18,18 +18,40 @@ const Cart = () => {
     setIsClient(true);
   }, []);
 
+  // const refreshCart = async () => {
+  //   if (isClient) {
+  //     const updatedCartItems = await Promise.all(
+  //       cart.cartItems.map(async (item) => {
+  //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${item.item._id}`);
+  //         const updatedProduct = await response.json();
+  //         return { ...item, item: updatedProduct };
+  //       })
+  //     );
+  //     setCartItems(updatedCartItems);
+  //   }
+  // };
+  
   const refreshCart = async () => {
     if (isClient) {
-      const updatedCartItems = await Promise.all(
-        cart.cartItems.map(async (item) => {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${item.item._id}`);
-          const updatedProduct = await response.json();
-          return { ...item, item: updatedProduct };
-        })
-      );
-      setCartItems(updatedCartItems);
+      try {
+        const updatedCartItems = await Promise.all(
+          cart.cartItems.map(async (item) => {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${item.item._id}`);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch product ${item.item._id}: ${response.statusText}`);
+            }
+            const updatedProduct = await response.json();
+            return { ...item, item: updatedProduct };
+          })
+        );
+        setCartItems(updatedCartItems);
+      } catch (error) {
+        console.error('Error refreshing cart:', error);
+        toast.error('Failed to refresh cart. Please try again later.');
+      }
     }
   };
+  
 
   useEffect(() => {
     if (isClient) {
@@ -116,7 +138,7 @@ const Cart = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:w-3/4">
-        <div className="flex flex-col lg:flex-row gap-8 py-8 md:py-16">
+        <div className="flex flex-col lg:flex-row gap-8 py-8 lg:py-16">
           <div className="w-full lg:w-2/3 flex items-center min-h-screen">
             <div className="w-full">
               {cartItems.length === 0 ? (
@@ -143,7 +165,7 @@ const Cart = () => {
                           style={{ width: "170px", height: "170px" }}
                         />
                         <div className="flex flex-col gap-0 ml-4">
-                          <p className="text-body-bold" style={{fontSize: "22px", fontWeight: "600", height: "1"}}>
+                          <p className="text-body-bold" style={{fontSize: "20px", fontWeight: "600", height: "1"}}>
                             {cartItem.item.title}
                           </p>
                           {cartItem.item.isFinalSale && (
@@ -160,7 +182,7 @@ const Cart = () => {
                         </div>
                       </div>
                       <div className="flex gap-4 items-center">
-                        <div className="flex flex-col justify-between items-end h-full">
+                        <div className="flex flex-col justify-between items-end lg:items-end h-full">
                           <button
                             className="hover:text-red-1 cursor-pointer bg-transparent border-none "
                             onClick={() => handleRemoveItem(cartItem.item._id)}
@@ -169,7 +191,7 @@ const Cart = () => {
                           >
                             Delete
                           </button>
-                          <p className="text-small-medium bold-text mt-auto" style={{fontSize: "18px", fontWeight: "600", marginTop: "auto"}}>
+                          <p className="text-small-medium bold-text mt-auto" style={{fontSize: "18px", fontWeight: "600", marginBottom: "auto"}}>
                             ${cartItem.item.price * cartItem.quantity}
                           </p>
                         </div>

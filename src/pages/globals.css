@@ -266,6 +266,12 @@ h2 {
   padding: 2rem 4rem 0 4rem
 }
 
+.section__padding-vid-home {
+  padding: 0 4rem 0 4rem
+}
+
+
+
 @media (max-width: 414px) {
   .padding__mobile {
     padding: 4rem 1rem !important;

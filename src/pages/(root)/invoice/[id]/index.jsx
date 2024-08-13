@@ -145,6 +145,73 @@
 
 
 
+// import React, { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
+// import { getToken } from "../../../../utils/jwt";
+// import Invoice from "../../../../components/Invoice";
+
+// const InvoicePage = () => {
+//   const router = useRouter();
+//   const { id } = router.query;
+//   const [order, setOrder] = useState(null);
+//   const [isLoading, setIsLoading] = useState(true);
+
+//   useEffect(() => {
+//     if (!id) return;
+
+//     const fetchOrder = async () => {
+//       try {
+//         const token = getToken(); 
+//         if (token) {
+//           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders/get-orders/${id}`, {
+//             method: "GET",
+//             headers: {
+//               "Content-Type": "application/json",
+//               Authorization: `Bearer ${token}`,
+//             },
+//           });
+  
+//           if (!response.ok) {
+//             throw new Error("Failed to fetch order");
+//           }
+  
+//           const data = await response.json();
+//           console.log("Fetched order data:", data.order); 
+//           setOrder(data.order);
+//         } else {
+//           throw new Error("No token found");
+//         }
+//       } catch (error) {
+//         console.error("Error fetching order:", error);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+  
+//     fetchOrder();
+//   }, [id]);
+
+//   return (
+//     <div className="px-10 py-5 max-sm:px-3">
+//       {isLoading ? (
+//         <p>Loading...</p>
+//       ) : order ? (
+//         <Invoice order={order} />
+//       ) : (
+//         <p>Failed to load order details. Please try again.</p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default InvoicePage;
+
+
+
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getToken } from "../../../../utils/jwt";
@@ -177,7 +244,7 @@ const InvoicePage = () => {
   
           const data = await response.json();
           console.log("Fetched order data:", data.order); 
-          setOrder(data.order);
+          setOrder({...data.order, shortId: id});  // Add shortId to the order object
         } else {
           throw new Error("No token found");
         }

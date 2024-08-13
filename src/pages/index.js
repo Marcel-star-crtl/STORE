@@ -110,6 +110,7 @@ import Layout from '../components/Layout';
 import HeroSection from '../components/Hero';
 import Collections from '../components/Categories';
 import ProductList from '../components/ProductList';
+import ProductInfo from '../components/ProductInfo';
 import FullImage from '../components/FullImage';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -143,14 +144,14 @@ const HomePage = () => {
         <HeroSection />
         <Collections />
 
-        {/* <div className="relative h-screen overflow-hidden">
-          <div className="absolute inset-0 z-0 h-full px-4 sm:px-16">
-            <img src='/homepage1.png' alt="Hero Background" className="object-contain" />
+        {/* <FullImage imageUrl={Employee} alt="employee" /> */}
+        <div className="relative overflow-hidden">
+          <div className="gpt3__header-content section__padding-vid-home" style={{}}>
+            <div className="gpt3__header-image">
+              <Image src={Employee} alt="hey" className="object-cover w-full h-full" layout="fill" />
+            </div>
           </div>
-        </div> */}
-
-        <FullImage imageUrl={Employee} alt="employee" />
-
+        </div>
         <ProductList />
         <div className='padding__mobile-video ulev__details-video section__padding-vid'>
           <div className="">
