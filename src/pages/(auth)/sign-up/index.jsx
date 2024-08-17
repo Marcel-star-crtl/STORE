@@ -259,13 +259,13 @@ const Register = () => {
               <button 
                 type="button" 
                 onClick={() => login()} 
-                className="border border-gray-300 px-3 py-2 w-full text-left flex items-center justify-center space-x-2"
+                className="border border-gray-300 px-3 py-2 w-full text-left flex items-center text-black justify-center space-x-2"
               >
                 <img src="/google-icon.png" alt="Google" className="w-5 h-5" />
                 <span>Continue with Google</span>
               </button>
             
-              <button type="button" className="border border-gray-300 px-3 py-2 w-full text-left flex items-center justify-center space-x-2">
+              <button type="button" className="border border-gray-300 px-3 py-2 w-full text-left flex items-center text-black justify-center space-x-2">
                 <img src="/facebook-icon.png" alt="Facebook" className="w-5 h-5" />
                 <span>Continue with Facebook</span>
               </button>
