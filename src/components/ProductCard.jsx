@@ -14,7 +14,7 @@ const ProductCard = ({ product, updateWishlist, categoryTitle }) => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-4 cursor-pointer">
+    <div className="w-full flex flex-col gap-4 cursor-pointer text-black">
       <Link href={`/(root)/products/${product._id}`}>
         <div className="w-full">
           <Imagery productMedia={product.images.map(image => image.url)} />
@@ -24,7 +24,7 @@ const ProductCard = ({ product, updateWishlist, categoryTitle }) => {
         <div className="flex flex-col gap-1">
           <p className="text-lg font-semibold">{product.title}</p>
           <p className="text-small-medium text-gray-500">
-            {categoryTitle=product.category?.title || 'Unknown Category'}
+            {categoryTitle || 'Unknown Category'}
           </p>
           <p className="text-base font-medium" style={{fontFamily: "Poppins-Regular", fontSize: "14px"}}>$ {product.price.toFixed(0)}</p>
         </div>

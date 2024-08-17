@@ -337,9 +337,9 @@ const ProductInfo = ({ productInfo }) => {
   const totalReviews = productInfo.ratings ? productInfo.ratings.length : 0;
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center text-black">
       <div className="max-w-[400px] flex flex-col gap-0">
-        <h1 className="font-bold text-3xl">{productInfo.title}</h1>
+        <h1 className="font-bold text-3xl text-black">{productInfo.title}</h1>
         <p className="text-base-bold">{categoryTitle || "Loading..."}</p>
         <p className="text-xl font-semibold">${totalPrice}</p>
         

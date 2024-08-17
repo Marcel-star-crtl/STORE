@@ -212,12 +212,12 @@ const ProductDetails = () => {
       <FullVideo videoUrl="/annies_vid4.mp4" />
       {productDetails && (
         <>
-          <div className="flex justify-center items-start gap-8 px-4 md:px-16 pb-10 max-md:flex-col max-md:items-center">
+          <div className="flex justify-center items-start gap-8 px-4 md:px-16 pb-10 max-md:flex-col max-md:items-center text-black">
             <Gallery productMedia={productDetails.images.map(image => image.url)} />
             <ProductInfo productInfo={productDetails} cartItems={cart.cartItems} />
           </div>
 
-          <div className="px-4 md:px-16 lg:px-48 xl:px-64 2xl:px-80 py-8 md:py-12 lg:py-16">
+          <div className="px-4 md:px-16 lg:px-48 xl:px-64 2xl:px-80 py-8 md:py-12 lg:py-16 text-black">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-2/3" style={{paddingRight: "4rem"}}>
               <div className="flex items-center justify-between" style={{ marginBottom: "2rem"}}>
@@ -290,7 +290,7 @@ const ProductDetails = () => {
         </>
       )}
 
-      <div className="flex flex-col items-left px-4 md:px-16">
+      <div className="flex flex-col items-left px-4 md:px-16 text-black">
         <div className="text-body-normal text-grey-2 text-left mb-8 pl-2">
           <p className="text-left font-bold" style={{ fontSize: "clamp(18px, 5vw, 32px)", lineHeight: "1.0" }}>
             You May Also Like
@@ -326,9 +326,9 @@ const ProductDetails = () => {
       </div>
 
       {/* CONNECT */}
-      <div className="flex flex-col md:flex-row max-h-[400px] px-4 sm:px-16 py-8">
+      <div className="flex flex-col md:flex-row max-h-[400px] px-4 sm:px-16 py-8 text-black">
         <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 border border-black">
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight md:leading-snug lg:leading-tight text-center md:text-left">
+          <h1 className="font-playfair text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight md:leading-snug lg:leading-tight text-center md:text-left text-black">
             Carefully <br/> Considered
           </h1>
         </div>
