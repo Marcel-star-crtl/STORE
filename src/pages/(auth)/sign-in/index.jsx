@@ -155,7 +155,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center" style={{ fontSize: "14px", fontFamily: "Poppins-Regular" }}>
-      <div className="bg-white p-8 w-full" style={{ width: "700px" }}>
+      <div className="bg-white pr-4 pl-4 md:p-8 w-full" style={{ width: "700px" }}>
         <Formik
           initialValues={{ email: '', password: '' }}
           validationSchema={validationSchema}

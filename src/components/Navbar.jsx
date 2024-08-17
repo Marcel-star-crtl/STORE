@@ -270,7 +270,8 @@ const Navbar = () => {
     { id: 1, link: "History", path: "/(root)/orders" },
     { id: 2, link: "Wish List", path: "/(root)/wishlist" },
     { id: 4, link: "Contact", path: "/contact" },
-    { id: 5, link: "Logout", path: "/(auth)/sign-in", isLogout: true }, 
+    { id: 5, link: "Login", path: "/(auth)/sign-in" },
+    { id: 6, link: "Logout", path: "/(auth)/sign-in", isLogout: true }, 
   ];
 
   useEffect(() => {

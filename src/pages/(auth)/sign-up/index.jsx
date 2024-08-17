@@ -206,7 +206,7 @@ const Register = () => {
   return (
     <div className="min-h-screen flex justify-center items-center" style={{fontFamily: "Poppins-Regular"}}>
       {/* <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"> */}
-      <div className="bg-white p-8 w-full" style={{width: "700px"}}>
+      <div className="bg-white pr-4 pl-4 md:p-8 w-full" style={{width: "700px"}}>
         <Formik
           initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
           validationSchema={validationSchema}
