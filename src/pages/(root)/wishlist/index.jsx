@@ -85,9 +85,9 @@ const Wishlist = () => {
   };
 
   return loading ? (
-    <p>Loading...</p>
+    <p className='px-4 sm:px-8 md:px-12 lg:px-20'>Loading...</p>
   ) : (
-    <div className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 py-4 sm:py-8 md:py-12 ">
+    <div className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 py-4 sm:py-8 md:py-12 min-h-screen ">
       {/* <h2 className="font-bold mb-4 text-2xl sm:text-3xl lg:text-4xl">Saved Items</h2> */}
       <div className="flex justify-between items-start mb-4">
         <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl">Saved Items</h2>

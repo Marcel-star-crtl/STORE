@@ -204,7 +204,7 @@ const HomePage = () => {
         </div>
 
         {/* CONNECT */}
-        <div className="flex flex-col md:flex-row max-h-[400px] px-4 sm:px-16 pb-4">
+        <div className="flex flex-col md:flex-row max-h-[400px] px-4 sm:px-16 pb-4 text-black">
           <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 border border-black">
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight md:leading-snug lg:leading-tight text-center md:text-left">
               Carefully <br/> Considered

@@ -37,7 +37,7 @@ const Category = () => {
         {/* <Collections /> */}
         <div className="flex flex-col items-center gap-10 pt-8">
           {!categories.length ? (
-            <p className="text-body-bold">No categories found</p>
+            <p className="text-body-bold px-4 sm:px-8 md:px-12 lg:px-20">No categories found</p>
           ) : (
             <>
               <div className="hidden md:block w-full" style={{padding: "4rem 4rem 0 4rem"}}>

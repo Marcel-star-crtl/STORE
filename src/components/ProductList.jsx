@@ -458,7 +458,7 @@ const ProductList = () => {
             <Slider ref={newArrivalsSliderRef} {...sliderSettings} afterChange={handleNewArrivalsAfterChange}>
               {newArrivals.map(product => (
                 <div key={product._id} className="">
-                  <ProductCard product={product} />
+                  <ProductCard product={product} categoryTitle={product.category?.title || 'Unknown Category'}/>
                 </div>
               ))}
             </Slider>
@@ -482,7 +482,7 @@ const ProductList = () => {
             <Slider ref={bestSellersSliderRef} {...sliderSettings} afterChange={handleBestSellersAfterChange}>
               {bestSellers.map(product => (
                 <div key={product._id} className="">
-                  <ProductCard product={product} />
+                  <ProductCard product={product} categoryTitle={product.category?.title || 'Unknown Category'}/>
                 </div>
               ))}
             </Slider>

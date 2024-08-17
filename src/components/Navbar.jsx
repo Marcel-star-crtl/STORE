@@ -387,7 +387,7 @@ const Navbar = () => {
             className="flex items-center hover:underline text-sm md:text-base"
             onClick={toggleAccountDropdown}
           >
-            Account <FaChevronDown className="ml-1" />
+            Account 
           </div>
           {showAccountDropdown && (
             <ul className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
@@ -411,7 +411,7 @@ const Navbar = () => {
           )}
         </li>
       </ul>
-      <div onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden">
+      <div onClick={() => setNav(!nav)} className="cursor-pointer z-10 text-gray-500 md:hidden">
         {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
       </div>
       {nav && (

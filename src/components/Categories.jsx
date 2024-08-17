@@ -196,7 +196,7 @@ const Categories = () => {
         <p className="text-body-bold">No categories found</p>
       ) : (
         <>
-          <div className="hidden md:block w-full section__padding">
+          <div className="hidden md:block w-full text-black section__padding ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4  w-full">
               {categories.map((category) => (
                 <Link href={`/(root)/categories/${category._id}`} key={category._id} className="w-full">
@@ -216,7 +216,7 @@ const Categories = () => {
             </div>
           </div>
 
-          <div className="block md:hidden w-full px-4 md:px-8 lg:px-16">
+          <div className="block md:hidden w-full px-4 md:px-8 lg:px-16 text-black">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {categories.map((category) => (
                 <Link href={`/(root)/categories/${category._id}`} key={category._id} className="w-full">
@@ -229,7 +229,7 @@ const Categories = () => {
                       layout="responsive"
                       className="w-full"
                     />
-                    <p className="text-left text-xl sm:text-2xl md:text-3xl font-bold mt-2">{category.title}</p>
+                    <p className="text-left text-xl sm:text-2xl md:text-3xl font-bold mt-2 text-black">{category.title}</p>
                   </div>
                 </Link>
               ))}

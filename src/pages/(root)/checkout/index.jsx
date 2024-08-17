@@ -728,7 +728,7 @@ const Checkout = () => {
 
             <div className="md:w-1/2 flex flex-col items-end py-4 md:py-0">
               <div
-                className="w-2/3 border border-black p-4"
+                className="md:w-2/3 border border-black p-4"
                 style={{
                   height: "400px",
                   overflowY: "scroll",
